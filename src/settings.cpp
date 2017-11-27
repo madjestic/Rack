@@ -17,17 +17,17 @@ static json_t *settingsToJson() {
 	json_t *tokenJ = json_string(gToken.c_str());
 	json_object_set_new(rootJ, "token", tokenJ);
 
-	if (!guiIsMaximized()) {
-		// windowSize
-		Vec windowSize = guiGetWindowSize();
-		json_t *windowSizeJ = json_pack("[f, f]", windowSize.x, windowSize.y);
-		json_object_set_new(rootJ, "windowSize", windowSizeJ);
+	//if (!guiIsMaximized()) {
+	//	// windowSize
+	//	Vec windowSize = guiGetWindowSize();
+	//	json_t *windowSizeJ = json_pack("[f, f]", windowSize.x, windowSize.y);
+	//	json_object_set_new(rootJ, "windowSize", windowSizeJ);
 
-		// windowPos
-		Vec windowPos = guiGetWindowPos();
-		json_t *windowPosJ = json_pack("[f, f]", windowPos.x, windowPos.y);
-		json_object_set_new(rootJ, "windowPos", windowPosJ);
-	}
+	//	// windowPos
+	//	Vec windowPos = guiGetWindowPos();
+	//	json_t *windowPosJ = json_pack("[f, f]", windowPos.x, windowPos.y);
+	//	json_object_set_new(rootJ, "windowPos", windowPosJ);
+	//}
 
 	// opacity
 	float opacity = gToolbar->wireOpacitySlider->value;
